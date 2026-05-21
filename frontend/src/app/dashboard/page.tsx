@@ -196,7 +196,7 @@ export default function DashboardPage() {
               ) : (
                 globalTop.map((entry, idx) => (
                   <div
-                    key={entry.userId}
+                    key={entry.userId || entry.id || idx}
                     className={`flex items-center gap-3 px-4 py-3 ${idx !== globalTop.length - 1 ? 'border-b border-white/5' : ''}`}
                   >
                     <span className="text-xl w-8">{getRankMedal(entry.rank)}</span>

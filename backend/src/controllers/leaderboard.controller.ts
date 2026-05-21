@@ -22,6 +22,7 @@ export const getGlobalLeaderboard = async (req: Request, res: Response, next: Ne
 
     const ranked = users.map((u, idx) => ({
       ...u,
+      userId: u.id,
       rank: skip + idx + 1,
       matchesPlayed: u._count.fantasyTeams,
     }));

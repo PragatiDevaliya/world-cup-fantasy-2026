@@ -107,10 +107,10 @@ export default function LeaderboardPage() {
               {/* Full Rankings Table */}
               <div className="glass rounded-2xl overflow-hidden">
                 {rankings.map((entry, idx) => {
-                  const isMe = entry.userId === user?.id;
+                  const isMe = (entry.userId || entry.id) === user?.id;
                   return (
                     <motion.div
-                      key={entry.userId}
+                      key={entry.userId || entry.id || idx}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.02 }}
